@@ -1,0 +1,11 @@
+{
+  "name": "setjettersnodejs",
+  "version": "1.0.0",
+  "description": "Prototype interface for setjetters GIS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Reuben Wasser, Sarah Zweip",
+  "license": "ISC"
+}
