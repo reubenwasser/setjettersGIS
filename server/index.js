@@ -5,8 +5,8 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 
 const db = mysql.createPool({
-    host: '35.227.141.33',
-    user: 'root',
+    host: 'setjetters1.c2ipvnggy6hj.us-east-2.rds.amazonaws.com',
+    user: 'admin',
     password: 'NumberSheep'
 })
 
