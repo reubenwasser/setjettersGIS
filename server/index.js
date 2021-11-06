@@ -14,9 +14,16 @@ app.use(cors());
 app.use(express.json())
 app.use(bodyParser.urlencoded({extended: true}))
 
-app.get("/api/get", (req, res) => {
-    const sqlSelect = "SELECT lng, lat, `name` FROM setjetters_export.real_locations WHERE lng IS NOT NULL"
-    db.query(sqlSelect, (err, result) => {
+app.get("/api/get/locations", (req, res) => {
+    const locationsSelect = "SELECT * FROM setjetters_export.real_locations WHERE lng IS NOT NULL"
+    db.query(locationsSelect, (err, result) => {
+        res.send(result);
+    })
+})
+
+app.get("/api/get/cities", (req, res) => {
+    const locationsSelect = "SELECT * FROM setjetters_export.cities WHERE lng IS NOT NULL"
+    db.query(locationsSelect, (err, result) => {
         res.send(result);
     })
 })
