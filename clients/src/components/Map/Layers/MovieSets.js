@@ -3,6 +3,8 @@ import Axios from "axios";
 import { Marker, Popup } from 'react-leaflet';
 import { setIcon } from './Icons';
 
+require('react-leaflet-markercluster/dist/styles.min.css'); 
+
 
 function MovieSets() {
   const [movieLocationsList, setMovieLocations] = useState([]);
@@ -15,6 +17,7 @@ function MovieSets() {
   }, [])
 
   return (
+      
       movieLocationsList.map((val) => (
         <Marker icon={setIcon}
         // key = {val.name} 

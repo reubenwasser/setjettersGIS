@@ -1,0 +1,22 @@
+.info {
+    padding: 10px 50px;
+    font: 14px/16px Arial, Helvetica, sans-serif;
+    background: white;
+    border-radius: 10px;
+}
+
+.legend {
+    text-align: left;
+    line-height: 18px;
+    color: #555;
+}
+
+.legend h4{
+    font-size: large;
+    color: #000;
+    text-align: center;
+}
+
+.legend b{
+    vertical-align: top;
+}
