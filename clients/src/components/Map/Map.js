@@ -1,6 +1,6 @@
 import './Map.css';
 import "leaflet/dist/leaflet.css";
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 import { MapContainer} from 'react-leaflet';
 import Layers from './Layers/Layers';
 import Legend from './Legend/Legend';

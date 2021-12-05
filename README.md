@@ -5,6 +5,6 @@ In server directory enter command
 
 `npm run devStart`
 
-In client directory enter command
+In clients directory enter command
 
 `npm start`

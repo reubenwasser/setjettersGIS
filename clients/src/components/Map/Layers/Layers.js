@@ -1,11 +1,25 @@
-import { TileLayer, LayersControl, LayerGroup} from 'react-leaflet';
+import React from 'react';
+import { TileLayer, LayersControl, LayerGroup, FeatureGroup, useMap, useMapEvent} from 'react-leaflet';
 import MovieSets from './MovieSets';
 import Cities from './Cities';
+import Businesses from './Businesses'
+import OSMForm from '../OSM/OSMForm';
 import MarkerClusterGroup from 'react-leaflet-markercluster';
 
 
 
 function Layers() {
+
+    const [OSMSearch, setOSMSearch] = React.useState([]);
+    const [mapBounds, setMapBounds] = React.useState(useMap().getBounds());
+
+    const map = useMapEvent('move', () => {
+      setMapBounds(map.getBounds());
+    });
+
+    const onSearchChange = (key, value) => {
+      setOSMSearch([key, value]);
+    }
 
   return (
     <LayersControl position="topright" collapsed="False">
@@ -32,6 +46,14 @@ function Layers() {
             <LayerGroup>
                 <Cities />
             </LayerGroup>
+        </LayersControl.Overlay>
+        <LayersControl.Overlay name="Nearby Businesses">
+        <FeatureGroup pathOptions={{ color: 'purple' }}>
+                <OSMForm handleSearchChange={onSearchChange}/>
+                <MarkerClusterGroup>
+                    <Businesses searchParams={OSMSearch} mapBounds={mapBounds}/>
+                </MarkerClusterGroup>
+            </FeatureGroup>
         </LayersControl.Overlay>
     </LayersControl>
   );

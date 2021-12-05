@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import Axios from "axios";
 import { Marker, Popup } from 'react-leaflet';
 import { setIcon } from './Icons';
+import OSMForm from '../OSM/OSMForm'
 
 require('react-leaflet-markercluster/dist/styles.min.css'); 
 
@@ -24,6 +25,7 @@ function MovieSets() {
         position = {[val.lat, val.lng]}>
           <Popup>
             {val.name}
+            <OSMForm />
           </Popup>
         </Marker>
       ))
